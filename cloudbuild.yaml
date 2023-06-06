@@ -6,8 +6,6 @@ steps:
 #### Pushing Docker Image ####
 - name: 'gcr.io/cloud-builders/docker'
   entrypoint: /bin/sh
-  options:
-  logging: CLOUD_LOGGING_ONLY
   args: 
   - -c
   - |
@@ -38,5 +36,5 @@ availableSecrets:
   - versionName: projects/$PROJECT_NUMBER/secrets/github-access-token/versions/latest
     env: 'GIT_ACCESS_TOKEN'
 
-# options:
-#   logging: CLOUD_LOGGING_ONLY
+ options:
+   logging: CLOUD_LOGGING_ONLY
