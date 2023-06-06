@@ -6,6 +6,8 @@ steps:
 #### Pushing Docker Image ####
 - name: 'gcr.io/cloud-builders/docker'
   entrypoint: /bin/sh
+  options:
+  logging: CLOUD_LOGGING_ONLY
   args: 
   - -c
   - |
