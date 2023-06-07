@@ -33,7 +33,7 @@ steps:
     
 availableSecrets:
   secretManager:
-  - versionName:  projects/$PROJECT_NUMBER/secrets/GIT_ACCESS_TOKEN/versions/latest
+  - versionName: projects/643968500222/secrets/github-access-token/versions/1
     env: 'GIT_ACCESS_TOKEN'
 options:
    logging: CLOUD_LOGGING_ONLY
