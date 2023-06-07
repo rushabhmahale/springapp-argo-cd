@@ -21,7 +21,7 @@ steps:
   - |
     git clone https://rushabhmahale:$$GIT_ACCESS_TOKEN@github.com/rushabhmahale/springapp-deployment-argocd.git -b ${_CD_BRANCH}
     echo "Updating image tag version ..."
-    cd sspringapp-deployment-argocd
+    cd springapp-deployment-argocd
     sed "s/GOOGLE_CLOUD_PROJECT/$PROJECT_ID/g" deployment.yaml.tpl | \
     sed "s/COMMIT_SHA/${SHORT_SHA}/g" > deployment.yaml
     echo "Pushing changes to k8s manifest repo ..."
