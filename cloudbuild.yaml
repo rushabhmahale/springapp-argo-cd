@@ -9,8 +9,8 @@ steps:
   args: 
   - -c
   - |
-    docker push asia-docker.pkg.dev/$PROJECT_ID/${_ARTIFACT_REPO}/springapp:$SHORT_SHA
-    docker push asia-docker.pkg.dev/$PROJECT_ID/${_ARTIFACT_REPO}/springapp:${_IMAGE_TAG}
+    docker push asia-south1-docker.pkg.dev/$PROJECT_ID/${_ARTIFACT_REPO}/springapp:$SHORT_SHA
+    docker push asia-south1-docker.pkg.dev/$PROJECT_ID/${_ARTIFACT_REPO}/springapp:${_IMAGE_TAG}
 
 # This step generates the new manifest
 - name: 'gcr.io/cloud-builders/gcloud'
