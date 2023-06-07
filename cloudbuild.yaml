@@ -21,14 +21,14 @@ steps:
   - |
     git clone https://rushabhmahale:$$GIT_ACCESS_TOKEN@github.com/rushabhmahale/springapp-deployment-argocd.git -b ${_CD_BRANCH}
     echo "Updating image tag version ..."
-    cd springapp-deployment
+    cd sspringapp-deployment-argocd
     sed "s/GOOGLE_CLOUD_PROJECT/$PROJECT_ID/g" deployment.yaml.tpl | \
     sed "s/COMMIT_SHA/${SHORT_SHA}/g" > deployment.yaml
     echo "Pushing changes to k8s manifest repo ..."
     git config --global user.name "rushabhmahale"
     git config --global user.email "rushabhmahale21gmail.com"
     git add -A
-    git commit -m "[Cloud Builder] Updated image tag asia-docker.pkg.dev/$PROJECT_ID/${_ARTIFACT_REPO}/springapp:$SHORT_SHA from commit ${COMMIT_SHA}"
+    git commit -m "[Cloud Builder] Updated image tag asia-south1-docker.pkg.dev/$PROJECT_ID/${_ARTIFACT_REPO}/springapp:$SHORT_SHA from commit ${COMMIT_SHA}"
     git push https://rushabhmahale:$$GIT_ACCESS_TOKEN@github.com/rushabhmahale/springapp-deployment-argocd.git ${_CD_BRANCH}
     
 availableSecrets:
