@@ -8,7 +8,7 @@ public class HelloWorldController {
 
 	@GetMapping("/")
 	public String sayHello() {
-		return "Hello Running From ARGOCD";
+		return "Hello CI/CD  With ArgoCD";
 	}
 	
 }
